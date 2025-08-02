@@ -1,0 +1,133 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5fff7;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2a7c4f;
+}
+
+#grid-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.year-column {
+  background-color: #e7f6ec;
+  padding: 15px;
+  border-radius: 12px;
+  min-width: 240px;
+  box-shadow: 0 0 10px rgba(0, 80, 40, 0.1);
+  flex-shrink: 0;
+}
+
+.year-column h2 {
+  text-align: center;
+  color: #1d5c3a;
+}
+
+.semester {
+  margin-top: 15px;
+}
+
+.semester h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #248c5c;
+  text-align: center;
+}
+
+.subject {
+  background-color: #cccccc; /* bloqueado */
+  color: #333;
+  border: 1px solid #999;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 8px;
+  position: relative;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.subject .number {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.subject .name {
+  font-size: 15px;
+  margin: 5px 0;
+}
+
+.subject .toggle {
+  align-self: stretch;
+  background-color: #3e8654;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.3s;
+}
+
+.subject .toggle:hover {
+  background-color: #2e6641;
+}
+
+/* Estados */
+.subject.blocked {
+  background-color: #dddddd;
+  border-color: #aaa;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.subject.available {
+  background-color: #d0f3d8;
+  border-color: #6bcf8e;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.subject.approved {
+  background-color: #47c774;
+  border-color: #2a7c4f;
+  color: white;
+}
+
+.subject.approved .toggle {
+  background-color: white;
+  color: #2a7c4f;
+  font-weight: bold;
+}
+
+.idioma {
+  background-color: #e1f2f5;
+  border: 2px dashed #70b8cb;
+}
+
+.idioma h2 {
+  color: #257c8e;
+}
+
+/* Scroll en pantallas pequeñas */
+@media (max-width: 768px) {
+  #grid-container {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+
+  .year-column {
+    min-width: 220px;
+  }
+}
